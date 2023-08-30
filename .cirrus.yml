@@ -5,11 +5,12 @@ env:
     device: lavender
 
 task:
-  name: "Snx-R"
+  name: "Snx-xR"
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:latest
+      image: ubuntu:latest
+      # image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -19,13 +20,15 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
         
-  notify_script:
+  tsync_script:
     - set -e
-    - apt update
-    - sudo apt update -y
+    - bash <(curl -s $script/tsync.sh)
+  
+  snotify_script:
+    - set -e
     - bash <(curl -s $script/notify.sh)
     
-  sync_script:
+  ssync_script:
     - set -e
     - bash <(curl -s $script/sync.sh)
 
