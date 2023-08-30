@@ -21,6 +21,8 @@ task:
         
   notify_script:
     - set -e
+    - apt update
+    - sudo apt update -y
     - bash <(curl -s $script/notify.sh)
     
   sync_script:
