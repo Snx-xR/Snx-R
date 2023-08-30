@@ -6,7 +6,7 @@ env:
 
 task:
   name: "Snx-R"
-  skip: $CIRRUS_BRANCH == 'main'
+  # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
       image: snaxpsycho/cirrus:latest
