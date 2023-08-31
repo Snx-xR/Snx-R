@@ -11,8 +11,8 @@ task:
   container:
       # image: ubuntu:latest
       image: snaxpsycho/cirrus:latest
-      cpu: 8
-      memory: 32G
+      cpu: 5
+      memory: 20G
       stateful: true
       greedy: true
       volumes:
