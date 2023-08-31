@@ -21,6 +21,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   vanilla_build_script:
+    - sudo apt-get install gpg
     - bash <(curl -s $script/notify.sh)
     - bash <(curl -s $script/sync.sh)
     - bash <(curl -s $script/build.sh)
