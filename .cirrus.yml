@@ -24,9 +24,9 @@ task:
     - mkdir ~/$rom_name
     - cd ~/$rom_name
     - rm -rf .repo/local_manifests
-    - repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
-    - repo start 10 --all
-    # - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+    # - repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
+    # - repo start 10 --all
+    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
     - free -h
     - du -sh
     - df -h
