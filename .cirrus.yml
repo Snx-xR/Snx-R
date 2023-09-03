@@ -13,6 +13,7 @@ task:
       image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
+      disk: 200
       stateful: true
       greedy: true
       volumes:
