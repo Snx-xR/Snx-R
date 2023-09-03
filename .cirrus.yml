@@ -30,6 +30,7 @@ task:
     - free -h
     - du -sh
     - df -h
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
     # - bash <(curl -s $script/notify.sh)
     # - bash <(curl -s $script/sync.sh)
     # - bash <(curl -s $script/build.sh)
