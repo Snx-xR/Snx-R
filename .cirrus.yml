@@ -27,9 +27,9 @@ task:
     - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
     - free -h
     - df -h
-    # - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
     - bash <(curl -s $script/notify.sh)
-    - repo sync
+    # - repo sync
     # - bash <(curl -s $script/sync.sh)
     - bash <(curl -s $script/build.sh)
     
