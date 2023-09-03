@@ -11,8 +11,8 @@ task:
   container:
       # image: ubuntu:latest
       image: snaxpsycho/cirrus:latest
-      cpu: 5
-      memory: 20G
+      cpu: 8
+      memory: 32G
       stateful: true
       greedy: true
       volumes:
@@ -21,9 +21,14 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   vanilla_build_script:
-    - sudo apt-get install gpg
+    - repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
+    - repo status
+    - repo start 10 --all
+    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+    # - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
     - bash <(curl -s $script/notify.sh)
-    - bash <(curl -s $script/sync.sh)
+    - repo sync
+    # - bash <(curl -s $script/sync.sh)
     - bash <(curl -s $script/build.sh)
     
   # apps_up_script:
