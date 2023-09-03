@@ -8,12 +8,12 @@ task:
   name: "Snx-xR"
   # skip: $CIRRUS_BRANCH == 'main'
   # timeout_in: 240m
-  container:
+  arm_container:
       # image: ubuntu:latest
       image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
-      disk: 200
+      use_in_memory_disk: true
       stateful: true
       greedy: true
       volumes:
