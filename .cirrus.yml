@@ -14,7 +14,7 @@ arm_task:
         port: 3306
         cpu: 6.0
         memory: 28G
-        
+     build_script: sync.sh
 # task:
   # name: "Snx-xR"
   # timeout_in: 240m
