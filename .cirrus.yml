@@ -5,6 +5,7 @@ env:
     device: lavender
 
 task:
+  name: ARM_DEBUG_NTS
   container:
     image: snaxpsycho/cirrus:latest
     additional_containers:
