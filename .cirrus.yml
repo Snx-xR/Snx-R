@@ -4,15 +4,15 @@ env:
     rom_name: Nusantara
     device: lavender
 
-  test_task:
+  task:
   container:
-    image: bigtruedata/sbt:latest
-    additional_containers:
-      - name: oracle
-        image: container-registry.oracle.com/database/standard:latest
-        port: 1521
-        cpu: 1
-        memory: 8G
+     image: ubuntu:latest
+     additional_containers:
+        - name: snx
+        image: snaxpsycho/cirrus:latest
+        port: 8080
+        cpu: 8
+        memory: 32G
           
   vanilla_build_script:
     - mkdir ~/$rom_name
