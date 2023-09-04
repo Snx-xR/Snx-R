@@ -4,15 +4,16 @@ env:
     rom_name: Nusantara
     device: lavender
 
-  task:
-  container:
-     image: ubuntu:latest
-     additional_containers:
-        - name: snx
+arm_task:
+  name: ARM_DEBUG_NTS
+  arm_container:
+    image: ubuntu:latest
+    additional_containers:
+      - name: mysql
         image: snaxpsycho/cirrus:latest
-        port: 8080
-        cpu: 8
-        memory: 32G
+        port: 3306
+        cpu: 1.0
+        memory: 1G
           
   vanilla_build_script:
     - mkdir ~/$rom_name
