@@ -12,8 +12,8 @@ arm_task:
       - name: mysql
         image: ubuntu:latest #snaxpsycho/cirrus:latest
         port: 3306
-        cpu: 8.0
-        memory: 32G
+        cpu: 7.0
+        memory: 28G
           
   vanilla_build_script:
     - mkdir ~/$rom_name
