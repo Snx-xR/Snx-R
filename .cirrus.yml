@@ -4,16 +4,32 @@ env:
     rom_name: Nusantara
     device: lavender
 
+# arm_task:
+  # name: ARM_DEBUG_NTS
+  # arm_container:
+    # image: snaxpsycho/cirrus:latest #ubuntu:latest
+    # additional_containers:
+      # - name: mysql
+        # image: ubuntu:latest #snaxpsycho/cirrus:latest
+        # port: 3306
+        # cpu: 6.0
+        # memory: 28G
+        
 arm_task:
-  name: ARM_DEBUG_NTS
+  name: "Snx-xR"
+  timeout_in: 240m
   arm_container:
-    image: snaxpsycho/cirrus:latest #ubuntu:latest
-    additional_containers:
-      - name: mysql
-        image: ubuntu:latest #snaxpsycho/cirrus:latest
-        port: 3306
-        cpu: 6.0
-        memory: 28G
+      # image: ubuntu:latest
+      image: snaxpsycho/cirrus:latest
+      cpu: 8
+      memory: 32G
+      stateful: true
+      greedy: true
+      volumes:
+          - /home/cirrus:/home/cirrus
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
+          
           
   vanilla_build_script:
     - mkdir ~/$rom_name
