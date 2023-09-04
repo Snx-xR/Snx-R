@@ -5,21 +5,14 @@ env:
     device: lavender
 
 task:
-  name: "Snx-xR"
-  # skip: $CIRRUS_BRANCH == 'main'
-  # timeout_in: 240m
-  arm_container:
-      # image: ubuntu:latest
-      image: snaxpsycho/cirrus:latest
-      cpu: 8
-      memory: 32G
-      use_in_memory_disk: true
-      stateful: true
-      greedy: true
-      volumes:
-          - /home/cirrus:/home/cirrus
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
+  container:
+      image: ubuntu:latest
+      additional_containers:
+         - name: snx
+         image: snaxpsycho/cirrus:latest
+         port: 8080
+         cpu: 8
+         memory: 32G
           
   vanilla_build_script:
     - mkdir ~/$rom_name
