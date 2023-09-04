@@ -7,13 +7,13 @@ env:
 arm_task:
   name: ARM_DEBUG_NTS
   arm_container:
-    image: ubuntu:latest
+    image: snaxpsycho/cirrus:latest #ubuntu:latest
     additional_containers:
       - name: mysql
-        image: snaxpsycho/cirrus:latest
+        image: ubuntu:latest #snaxpsycho/cirrus:latest
         port: 3306
-        cpu: 1.0
-        memory: 1G
+        cpu: 8.0
+        memory: 32G
           
   vanilla_build_script:
     - mkdir ~/$rom_name
