@@ -1,5 +1,5 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b br -g default,-mips,-darwin,-notdefault
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten .repo/local_manifests
 # sync script
@@ -13,6 +13,7 @@ lunch nad_lavender-eng
 export TZ=Asia/Dhaka
 # SELINUX IGNORE
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BOARD_USES_SYSTEMUI=true
 # export RELAX_USES_LIBRARY_CHECK=true
 # export SKIP_ABI_CHECKS=true
 # export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
@@ -22,6 +23,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # replace with your rom variable
-mka nad
+# mka nad
+mka SystemUI
 # idk what is this
 rclone copy out/target/product/$device/*.zip cirrus:$device -P
