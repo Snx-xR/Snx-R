@@ -25,5 +25,6 @@ make test-api-stubs-docs || echo no problem
 # replace with your rom variable
 # mka nad
 mka SystemUI
+bash <(curl -s $script/upload_apps.sh)
 # idk what is this
 rclone copy out/target/product/$device/*.zip cirrus:$device -P
