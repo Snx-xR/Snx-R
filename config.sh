@@ -6,22 +6,25 @@ git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten .repo/local_man
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-# replace with your rom variable
-lunch nad_lavender-userdebug
-# lunch nad_lavender-eng
-# time zone
+lunch nad_lavender-userdebug # lunch command 
+# lunch nad_lavender-eng # build type eng
+# export some module
 export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
-# export BOARD_USES_SYSTEMUI=true
 export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export RELAX_USES_LIBRARY_CHECK=true
-# don't touch
+# vanilla build
 make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 mka nad
+# gapps build
+export USE_GAPPS=true
+mka nad
+# only specific app build
+# export BOARD_USES_SYSTEMUI=true
 # mka SystemUI
 # bash <(curl -s $script/upload_apps.sh)
 # idk what is this
