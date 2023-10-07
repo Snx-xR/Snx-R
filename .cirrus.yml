@@ -19,6 +19,8 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   notify_script:
+    - apt update
+    - apt install sudo
     - bash <(curl -s $script/notify.sh)
     
   sync_script:
