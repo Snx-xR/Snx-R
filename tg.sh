@@ -1,3 +1,7 @@
+git clone --recursive https://github.com/tdlib/telegram-bot-api.git
+ls -l telegram-bot-api/bin/telegram-bot-api*
+cp telegram-bot-api/bin/telegram-bot-api telegram-bot-api-binary
+chmod +x telegram-bot-api-binary
 function start() {
   ./telegram-bot-api-binary --api-id=15867628 --api-hash=78af1601f50c0b9c2db60c7a40b9bf35 -p 38118 --local 2>&1 > /dev/null &
   sleep 5
