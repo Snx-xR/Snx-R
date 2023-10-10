@@ -8,7 +8,7 @@ task:
   name: "Snx-R"
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:latest
+      image: snaxpsycho/cirrus:2.0
       cpu: 8
       memory: 32G
       stateful: true
@@ -19,19 +19,22 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   notify_script:
-    - apt update
-    - apt install sudo
+    # - apt update
+    # - apt install sudo
     - bash <(curl -s $script/notify.sh)
+    - mkdir snx
+    - curl https://sourceforge.net/projects/snx-r/files/lavender/Nusantara-EOL-lavender-VANILLA-09102023-SiXtY-N9-0754.zip/download -o snx/Nusantara-EOL-lavender-VANILLA-09102023-SiXtY-N9-0754.zip
+    - bash tg.sh
     
-  sync_script:
-    - bash <(curl -s $script/sync.sh)
+  # sync_script:
+    # - bash <(curl -s $script/sync.sh)
     
-  vanilla_build_script:
-    - bash <(curl -s $script/build.sh)
+  # vanilla_build_script:
+    # - bash <(curl -s $script/build.sh)
     
-  apps_up_script:
-    - set -e
-    - bash <(curl -s $script/upload_apps.sh)
+  # apps_up_script:
+    # - set -e
+    # - bash <(curl -s $script/upload_apps.sh)
     
   # gapps_build_script:
     # - set -e
