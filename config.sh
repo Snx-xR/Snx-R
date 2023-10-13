@@ -15,9 +15,9 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export RELAX_USES_LIBRARY_CHECK=true
-make api-stubs-docs || echo no problem
-make system-api-stubs-docs || echo no problem
-make test-api-stubs-docs || echo no problem
+# make api-stubs-docs || echo no problem
+# make system-api-stubs-docs || echo no problem
+# make test-api-stubs-docs || echo no problem
 # vanilla build
 # mka nad
 # gapps build
