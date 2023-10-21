@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 lunch nad_lavender-userdebug # lunch command 
-# lunch nad_lavender-eng # build type eng
+# lunch nad_lavender-eng # build type/lunch command 
 
 # export extra module
 export TZ=Asia/Dhaka
