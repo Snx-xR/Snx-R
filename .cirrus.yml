@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    rom_name: Nusantara
+    rom_name: Crdroid
     device: lavender
 
 task:

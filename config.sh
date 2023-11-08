@@ -1,15 +1,16 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 # replace with your manifest
-git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten .repo/local_manifests #ten-se-permissive
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b cr-13 .repo/local_manifests #ten-se-permissive
 # sync script
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#cr 13
 source build/envsetup.sh
-lunch nad_lavender-userdebug # lunch command 
+lunch lineage_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
-# export extra module
+# export some extra module
 export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
 export RELAX_USES_LIBRARY_CHECK=true
@@ -20,7 +21,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-mka nad
+m bacon
 
 # gapps build
 # export USE_GAPPS=true
