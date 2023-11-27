@@ -20,7 +20,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-mka nad
+mka nad 2>&1 | tee error.log
 
 # gapps build
 # export USE_GAPPS=true
@@ -30,4 +30,4 @@ mka nad
 # export BOARD_USES_SYSTEMUI=true
 # mka SystemUI
 # bash <(curl -s $script/upload_apps.sh)
-rclone copy out/target/product/$device/*.zip cirrus:$device -P
+Snx-R

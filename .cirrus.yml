@@ -3,9 +3,11 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
+    DATE=$(TZ=Asia/Dhaka date +"%Y%m%d-%T")
 
 task:
   name: "Snx-R"
+  # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
       image: snaxpsycho/cirrus:latest
