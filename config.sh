@@ -30,7 +30,7 @@ export RELAX_USES_LIBRARY_CHECK=true
 
 # # only specific app build
 export BOARD_USES_SYSTEMUI=true
-mka SystemUI
 make Settings
+mka SystemUI
 bash <(curl -s $script/upload_apps.sh)
 rclone copy out/target/product/$device/*.zip cirrus:$device -P
