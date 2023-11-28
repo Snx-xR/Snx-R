@@ -20,7 +20,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-mka nad 2>&1 | tee error.log
+mka nad
 
 # gapps build
 # export USE_GAPPS=true
