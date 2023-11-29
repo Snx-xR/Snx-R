@@ -1,12 +1,12 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectMatrixx/android.git -b 14.0 -g default,-mips,-darwin,-notdefault
 # replace with your manifest
-git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests #ten-se-permissive
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b mrtx-14 .repo/local_manifests #ten-se-permissive
 # sync script
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-lunch nad_lavender-userdebug # lunch command 
+lunch lineage_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
 # export extra module
@@ -20,7 +20,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-mka nad
+m bacon
 
 # gapps build
 # export USE_GAPPS=true
