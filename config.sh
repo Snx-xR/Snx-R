@@ -1,5 +1,5 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectMatrixx/android.git -b 14.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 14.0 -g default,-mips,-darwin,-notdefault
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b matrix-14 .repo/local_manifests #ten-se-permissive
 # sync script
