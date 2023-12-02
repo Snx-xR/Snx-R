@@ -16,9 +16,9 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_GENRULE_SANDBOXING=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_CLANG_PROPERTY=true
-make api-stubs-docs || echo no problem
-make system-api-stubs-docs || echo no problem
-make test-api-stubs-docs || echo no problem
+# make api-stubs-docs || echo no problem
+# make system-api-stubs-docs || echo no problem
+# make test-api-stubs-docs || echo no problem
 # vanilla build
 mka evolution
 
