@@ -12,10 +12,8 @@ lunch lineage_lavender-userdebug # lunch command
 # export extra module
 export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
-export RELAX_USES_LIBRARY_CHECK=true
-export SKIP_ABI_CHECKS=true
-export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-export RELAX_USES_LIBRARY_CHECK=true
+export BUILD_BROKEN_GENRULE_SANDBOXING=false
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
