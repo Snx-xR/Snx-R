@@ -1,11 +1,12 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 14.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b udc -g default,-mips,-darwin,-notdefault
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b matrix-14 .repo/local_manifests #ten-se-permissive
 # sync script
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
+lunch evolution_lavender-userdebug
 # lunch lineage_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
@@ -15,12 +16,11 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_GENRULE_SANDBOXING=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_CLANG_PROPERTY=true
-# make api-stubs-docs || echo no problem
-# make system-api-stubs-docs || echo no problem
-# make test-api-stubs-docs || echo no problem
+make api-stubs-docs || echo no problem
+make system-api-stubs-docs || echo no problem
+make test-api-stubs-docs || echo no problem
 # vanilla build
-lunch lineage_lavender-userdebug
-m bacon
+mka evolution
 
 # gapps build
 # export USE_GAPPS=true
