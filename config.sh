@@ -6,7 +6,6 @@ git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b matrix-14 .repo/loc
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-lunch evolution_lavender-userdebug
 # lunch lineage_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
@@ -20,6 +19,7 @@ export BUILD_BROKEN_CLANG_PROPERTY=true
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
 # vanilla build
+lunch evolution_lavender-userdebug
 mka evolution
 
 # gapps build
