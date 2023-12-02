@@ -6,7 +6,7 @@ git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b matrix-14 .repo/loc
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-lunch lineage_lavender-userdebug # lunch command 
+# lunch lineage_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
 # export extra module
@@ -14,10 +14,12 @@ export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_GENRULE_SANDBOXING=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-make api-stubs-docs || echo no problem
-make system-api-stubs-docs || echo no problem
-make test-api-stubs-docs || echo no problem
+export BUILD_BROKEN_CLANG_PROPERTY=true
+# make api-stubs-docs || echo no problem
+# make system-api-stubs-docs || echo no problem
+# make test-api-stubs-docs || echo no problem
 # vanilla build
+lunch lineage_lavender-userdebug
 m bacon
 
 # gapps build
