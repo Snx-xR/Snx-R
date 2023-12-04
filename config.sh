@@ -1,23 +1,23 @@
 # add repo, dt, vt, kt etc.
-# repo init -u https://github.com/Evolution-X/manifest -b udc
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b udc -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b udc -g default,-mips,-darwin,-notdefault
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b evo-14 .repo/local_manifests #ten-se-permissive
 # sync script
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-# repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 source build/envsetup.sh
-# lunch lineage_lavender-userdebug # lunch command 
+lunch evolution_lavender-userdebug # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
 # export extra module
 export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
+export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_GENRULE_SANDBOXING=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_CLANG_PROPERTY=true
-lunch evolution_lavender-userdebug
 make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
