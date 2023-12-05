@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    rom_name: Nusantara
+    rom_name: Matrixx
     device: lavender
 
 task:
@@ -20,6 +20,9 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   notify_script:
+    - rm -rf /usr/local/bin/repo
+    - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+    - sudo chmod a+rx /usr/local/bin/repo
     - bash <(curl -s $script/notify.sh)
     
   sync_script:
