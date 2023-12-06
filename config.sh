@@ -15,6 +15,10 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export RELAX_USES_LIBRARY_CHECK=true
+# Gapps Build
+export WITH_GAPPS=true
+export EXTRA_GAPPS=false
+
 # some extra module
 m bacon
 Snx-R
