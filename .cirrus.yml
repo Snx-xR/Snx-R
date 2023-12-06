@@ -68,17 +68,18 @@ task:
     - export RELAX_USES_LIBRARY_CHECK=true
     - make test-api-stubs-docs || echo no problem
   
-  lunch4_script:
-    - cd ~/$rom_name
-    - export TZ=Asia/Dhaka
-    - export SELINUX_IGNORE_NEVERALLOWS=true
-    - export RELAX_USES_LIBRARY_CHECK=true
-    - export SKIP_ABI_CHECKS=true
-    - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-    - export RELAX_USES_LIBRARY_CHECK=true
-    - m bacon
-  # vanilla_build_script:
-    # - bash <(curl -s $script/build.sh)
+  # lunch4_script:
+    # - cd ~/$rom_name
+    # - export TZ=Asia/Dhaka
+    # - export SELINUX_IGNORE_NEVERALLOWS=true
+    # - export RELAX_USES_LIBRARY_CHECK=true
+    # - export SKIP_ABI_CHECKS=true
+    # - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+    # - export RELAX_USES_LIBRARY_CHECK=true
+    # - m bacon
+
+  vanilla_build_script:
+    - bash <(curl -s $script/build.sh)
     
   # apps_up_script:
     # - set -e
