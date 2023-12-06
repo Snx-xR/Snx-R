@@ -35,6 +35,7 @@ task:
     - export USE_CCACHE=1
     - ccache -M 25G
     - ccache -z
+    - source build/envsetup.sh
     - lunch nad_lavender-userdebug
 
   lunch2_script:
