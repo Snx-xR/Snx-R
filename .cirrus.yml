@@ -36,8 +36,8 @@ task:
     - ccache -M 25G
     - ccache -z
     - source build/envsetup.sh
-    - lunch nad_lavender-userdebug
-
+    - lunch lineage_lavender-userdebug
+    
   lunch2_script:
     - cd ~/$rom_name
     - export TZ=Asia/Dhaka
