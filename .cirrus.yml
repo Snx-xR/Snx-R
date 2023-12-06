@@ -30,15 +30,15 @@ task:
   
   lunch_script:
     - cd ~/$rom_name
-    - lunch nad_lavender-userdebug
-
-  lunch2_script:
-    - cd ~/$rom_name
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - export CCACHE_EXEC=$(which ccache)
     - export USE_CCACHE=1
     - ccache -M 25G
     - ccache -z
+    - lunch nad_lavender-userdebug
+
+  lunch2_script:
+    - cd ~/$rom_name
     - export TZ=Asia/Dhaka
     - export SELINUX_IGNORE_NEVERALLOWS=true
     - export RELAX_USES_LIBRARY_CHECK=true
@@ -49,11 +49,6 @@ task:
     
   lunch3_script:
     - cd ~/$rom_name
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 25G
-    - ccache -z
     - export TZ=Asia/Dhaka
     - export SELINUX_IGNORE_NEVERALLOWS=true
     - export RELAX_USES_LIBRARY_CHECK=true
@@ -64,11 +59,6 @@ task:
     
   lunch4_script:
     - cd ~/$rom_name
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 25G
-    - ccache -z
     - export TZ=Asia/Dhaka
     - export SELINUX_IGNORE_NEVERALLOWS=true
     - export RELAX_USES_LIBRARY_CHECK=true
@@ -79,10 +69,6 @@ task:
   
   lunch4_script:
     - cd ~/$rom_name
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 25G
-    - ccache -z
     - export TZ=Asia/Dhaka
     - export SELINUX_IGNORE_NEVERALLOWS=true
     - export RELAX_USES_LIBRARY_CHECK=true
