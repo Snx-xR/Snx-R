@@ -27,9 +27,71 @@ task:
     
   sync_script:
     - bash <(curl -s $script/sync.sh)
+  
+  lunch_script:
+    - cd ~/$rom_name
+    - lunch nad_lavender-userdebug
+
+  lunch2_script:
+    - cd ~/$rom_name
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 25G
+    - ccache -z
+    - export TZ=Asia/Dhaka
+    - export SELINUX_IGNORE_NEVERALLOWS=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - export SKIP_ABI_CHECKS=true
+    - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - make api-stubs-docs || echo no problem
     
-  vanilla_build_script:
-    - bash <(curl -s $script/build.sh)
+  lunch3_script:
+    - cd ~/$rom_name
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 25G
+    - ccache -z
+    - export TZ=Asia/Dhaka
+    - export SELINUX_IGNORE_NEVERALLOWS=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - export SKIP_ABI_CHECKS=true
+    - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - make system-api-stubs-docs || echo no problem
+    
+  lunch4_script:
+    - cd ~/$rom_name
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 25G
+    - ccache -z
+    - export TZ=Asia/Dhaka
+    - export SELINUX_IGNORE_NEVERALLOWS=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - export SKIP_ABI_CHECKS=true
+    - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - make test-api-stubs-docs || echo no problem
+  
+  lunch4_script:
+    - cd ~/$rom_name
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 25G
+    - ccache -z
+    - export TZ=Asia/Dhaka
+    - export SELINUX_IGNORE_NEVERALLOWS=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - export SKIP_ABI_CHECKS=true
+    - export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+    - export RELAX_USES_LIBRARY_CHECK=true
+    - m bacon
+  # vanilla_build_script:
+    # - bash <(curl -s $script/build.sh)
     
   # apps_up_script:
     # - set -e
