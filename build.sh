@@ -2,7 +2,6 @@
 logo_url=https://raw.githubusercontent.com/Snx-xR/Snx-R/main/snx.png
 
 # message="◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦%0A%0A➜<b>Name:</b> <code>$dlink</code>%0A%0A➜<b>Size:</b> <code>$(du -sh $file | cut -d o -f 1 | cut -d / -f 4 | cut -d - -f 1)</code>%0A%0A➜<b>Download Link:</b> <a href='$link'>Click Here</a>%0A%0A➜<b>Time Took:</b> <code>$(($DIFF / 60))Min $(($DIFF % 60))Sec</code>%0A%0A➜<b>Total Disk used:</b> <code>$(du -sh)</code>%0A%0A➜<b>Build Date:</b> <code>$(date)</code>%0A%0A<b>◦•●◉✿ by Sã Śâjjãd ✿◉●•◦</b>"
-
 cd ~/$rom_name
 START=$(date +"%s")
 DIFF=$(($END - $START))
@@ -53,13 +52,13 @@ function remove_ota() {
 function vanilla_build() {
     # Telegram Notifier
     bot_msg "Repo sync complete. Vanilla Build Started"
-    # export CCACHE_DIR=~/ccache/$rom_name/$device
-    # export CCACHE_EXEC=$(which ccache)
-    # export USE_CCACHE=1
-    # ccache -M 25G
-    # ccache -z
-    # command=$(tail $CIRRUS_WORKING_DIR/config.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1) | head -n -1 | grep -v 'Snx-R')
-    # bash -c "$command"
+    export CCACHE_DIR=~/ccache/$rom_name/$device
+    export CCACHE_EXEC=$(which ccache)
+    export USE_CCACHE=1
+    ccache -M 25G
+    ccache -z
+    command=$(tail $CIRRUS_WORKING_DIR/config.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1) | head -n -1 | grep -v 'Snx-R')
+    bash -c "$command"
     # Remove OTA zip
     remove_ota
     file=out/target/product/$device/*.zip
@@ -80,6 +79,7 @@ function vanilla_build() {
 	       rsync -vhcP -e ssh $file sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
 	       # Compile Complete message sent to tg bot
 	       END=$(date +"%s")
+	       echo "$(date -u --date @$(($END - $START)) +%H:%M:%S)"; }
 	       bot_msg "◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦%0A%0A➜<b>Name:</b> <code>$dlink</code>%0A%0A➜<b>Size:</b> <code>$(du -sh $file | cut -d o -f 1 | cut -d / -f 4 | cut -d - -f 1)</code>%0A%0A➜<b>Download Link:</b> <a href='$link'>Click Here</a>%0A%0A➜<b>Time Took:</b> <code>$(($DIFF / 60))Min $(($DIFF % 60))Sec</code>%0A%0A➜<b>Total Disk used:</b> <code>$(du -sh)</code>%0A%0A➜<b>Build Date:</b> <code>$(date)</code>%0A%0A<b>◦•●◉✿ by Sã Śâjjãd ✿◉●•◦</b>"
 	       # Remove Compile zip
 	       rm -rf $file
