@@ -9,7 +9,7 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 200m
   container:
-      image: snaxpsycho/cirrus:beta
+      image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -26,7 +26,19 @@ task:
     - bash <(curl -s $script/notify.sh)
     
   sync_script:
-    - bash <(curl -s $script/sync.sh)
+    - mkdir ~/$rom_name
+    - cd ~/$rom_name
+    - repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/ProjectMatrixx/android.git -b 14.0 -g default,-mips,-darwin,-notdefault
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+    
+  trees_script:
+    - cd ~/$rom_name
+    - git clone --depth 1 https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/device_xiaomi_lavender-14 -b matrix device/xiaomi/lavender
+    - git clone --depth 1 https://github.com/Sa-Sajjad/vendor_xiaomi_lavender -b matrix-14 vendor/xiaomi/lavender
+    - git clone --depth 1 https://github.com/Sa-Sajjad/kernel_xiaomi_lavender-neko -b neko-qti kernel/xiaomi/lavender
+
+  # sync_script:
+    # - bash <(curl -s $script/sync.sh)
   
   lunch_script:
     - cd ~/$rom_name
