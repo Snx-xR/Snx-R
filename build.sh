@@ -30,6 +30,21 @@ function photo_push() {
          "https://api.telegram.org/bot$bot_api/sendPhoto"
 }
 #*********************************************************************************************************#
+function remove_ota() {
+    otazip=out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution"
+    cipher=out/target/product/$device/CipherOS-*-OTA-*.zip
+    ota=out/target/product/$device/*ota*.zip
+    if [ -n "$(ls -A $otazip)" ]; then
+         rm $otazip
+    fi
+    if [ -n "$(ls -A $cipher)" ]; then
+         rm $cipher
+    fi
+    if [ -n "$(ls -A $ota)" ]; then
+         rm $ota
+    fi
+}
+#*********************************************************************************************************#
 function vanilla_build() {
     START=$(date +"%s")
     DIFF=$(($END - $START))
@@ -46,10 +61,7 @@ function vanilla_build() {
     # command=$(tail $CIRRUS_WORKING_DIR/config.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1) | head -n -1 | grep -v 'Snx-R')
     # bash -c "$command"
     # Remove OTA zip
-    otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
-    cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
-    ota=$(ls out/target/product/$device/*ota*.zip || true)
-    rm -rf $otazip $cipher $ota
+    remove_ota
     # Verify Files
 	if ! [ -n "$(ls -A $file)" ]; then
            echo "Error: $file not found"
