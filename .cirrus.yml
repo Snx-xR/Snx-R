@@ -97,9 +97,9 @@ task:
     # - set -e
     # - bash <(curl -s $script/upload_apps.sh)
     
-  # gapps_build_script:
-    # - set -e
-    # - bash <(curl -s $script/gapps_build.sh)
+  gapps_build_script:
+    - set -e
+    - bash <(curl -s $script/gapps_build.sh)
     
   # gapps_up_script:
     # - set -e
