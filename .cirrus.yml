@@ -37,7 +37,7 @@ task:
     - cp Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip Nusantara-EOL-lavender-VANILLA-16112023-ota-0920.zip
   
   vanilla_build_script:
-    - bash <(curl -s $script/build.sh)
+    - bash $CIRRUS_WORKING_DIR/build.sh
     
   # apps_up_script:
     # - set -e
