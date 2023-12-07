@@ -31,16 +31,19 @@ function photo_push() {
 }
 #*********************************************************************************************************#
 function remove_ota() {
-    otazip=out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution"
-    cipher=out/target/product/$device/CipherOS-*-OTA-*.zip
+    ota3=out/target/product/$device/*-ota-*.zip
+    ota2=out/target/product/$device/*-*-OTA-*.zip
     ota=out/target/product/$device/*ota*.zip
-    if [ -n "$(ls -A $otazip)" ]; then
-         rm $otazip
+    if [ -n "$(ls -A $ota3)" ]; then
+         echo "found $ota3 Removing file"
+         rm $ota3
     fi
-    if [ -n "$(ls -A $cipher)" ]; then
-         rm $cipher
+    if [ -n "$(ls -A $ota2)" ]; then
+         echo "found $ota2 Removing file"
+         rm $ota2
     fi
     if [ -n "$(ls -A $ota)" ]; then
+         echo "found $ota Removing file"
          rm $ota
     fi
 }
@@ -62,6 +65,7 @@ function vanilla_build() {
     # bash -c "$command"
     # Remove OTA zip
     remove_ota
+	END=$(date +"%s")
     # Verify Files
 	if ! [ -n "$(ls -A $file)" ]; then
            echo "Error: $file not found"
@@ -75,7 +79,6 @@ function vanilla_build() {
 	       bot_msg "Rom Compilation Finished. Started Uploading"
 	       # Uploading to Sourceforge.net
 	       rsync -vhcP -e ssh $file sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
-	       END=$(date +"%s")
 	       # Compile Complete message sent to tg bot
 	       bot_msg "◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦%0A%0A➜<b>Name:</b> <code>$dlink</code>%0A%0A➜<b>Size:</b> <code>$(du -sh $file | cut -d o -f 1 | cut -d / -f 4 | cut -d - -f 1)</code>%0A%0A➜<b>Download Link:</b> <a href='$link'>Click Here</a>%0A%0A➜<b>Time Took:</b> <code>$(($DIFF / 60))Min $(($DIFF % 60))Sec</code>%0A%0A➜<b>Total Disk used:</b> <code>$(du -sh)</code>%0A%0A➜<b>Build Date:</b> <code>$(date)</code>%0A%0A<b>◦•●◉✿ by Sã Śâjjãd ✿◉●•◦</b>"
 	       # Remove Compile zip
