@@ -25,16 +25,16 @@ task:
   # sync_script:
     # - bash <(curl -s $script/sync.sh)
     
-  # download_file_script:
-    # - mkdir ~/$rom_name
-    # - mkdir ~/$rom_name/out
-    # - mkdir ~/$rom_name/out/target
-    # - mkdir ~/$rom_name/out/target/product
-    # - mkdir ~/$rom_name/out/target/product/$device
-    # - cd ~/$rom_name/out/target/product/$device
-    # - wget https://snx:psycho@sa.mirror-hub.workers.dev/1:/Snx/accounts.zip
-    # - mv accounts.zip Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip
-    # - cp Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip Nusantara-EOL-lavender-VANILLA-16112023-ota-0920.zip
+  download_file_script:
+    - mkdir ~/$rom_name
+    - mkdir ~/$rom_name/out
+    - mkdir ~/$rom_name/out/target
+    - mkdir ~/$rom_name/out/target/product
+    - mkdir ~/$rom_name/out/target/product/$device
+    - cd ~/$rom_name/out/target/product/$device
+    - wget https://snx:psycho@sa.mirror-hub.workers.dev/1:/Snx/accounts.zip
+    - mv accounts.zip Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip
+    - cp Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip Nusantara-EOL-lavender-VANILLA-16112023-ota-0920.zip
   
   vanilla_build_script:
     - bash $CIRRUS_WORKING_DIR/build.sh
