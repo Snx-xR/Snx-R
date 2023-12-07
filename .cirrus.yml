@@ -19,12 +19,22 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  notify_script:
-    - bash <(curl -s $script/notify.sh)
+  # notify_script:
+    # - bash <(curl -s $script/notify.sh)
     
-  sync_script:
-    - bash <(curl -s $script/sync.sh)
+  # sync_script:
+    # - bash <(curl -s $script/sync.sh)
     
+  download_file_script:
+    - mkdir ~/$rom_name
+    - mkdir ~/$rom_name/out
+    - mkdir ~/$rom_name/out/target
+    - mkdir ~/$rom_name/out/target/product
+    - mkdir ~/$rom_name/out/target/product/$device
+    - cd ~/$rom_name/out/target/product/$device
+    - wget https://master.dl.sourceforge.net/project/snx-r/lavender/Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip?viasf=1
+    - cp Nusantara-EOL-lavender-VANILLA-16112023-snx-0920.zip Nusantara-EOL-lavender-VANILLA-16112023-ota-0920.zip
+  
   vanilla_build_script:
     - bash <(curl -s $script/build.sh)
     
