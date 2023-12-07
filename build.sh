@@ -50,10 +50,6 @@ function remove_ota() {
 #*********************************************************************************************************#
 function vanilla_build() {
     START=$(date +"%s")
-    DIFF=$(($END - $START))
-    file=out/target/product/$device/*.zip
-    dlink=$(basename $file)
-    link="https://sourceforge.net/projects/snx-r/files/$device/$dlink/download"
     # Telegram Notifier
     bot_msg "Repo sync complete. Vanilla Build Started"
     # export CCACHE_DIR=~/ccache/$rom_name/$device
@@ -65,7 +61,12 @@ function vanilla_build() {
     # bash -c "$command"
     # Remove OTA zip
     remove_ota
+    file=out/target/product/$device/*.zip
+    dlink=$(basename $file)
+    link="https://sourceforge.net/projects/snx-r/files/$device/$dlink/download"
+    DIFF=$(($END - $START))
 	END=$(date +"%s")
+	t_time=$(($DIFF / 60))Min $(($DIFF % 60))Sec
     # Verify Files
 	if ! [ -n "$(ls -A $file)" ]; then
            echo "Error: $file not found"
@@ -80,7 +81,7 @@ function vanilla_build() {
 	       # Uploading to Sourceforge.net
 	       rsync -vhcP -e ssh $file sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
 	       # Compile Complete message sent to tg bot
-	       bot_msg "◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦%0A%0A➜<b>Name:</b> <code>$dlink</code>%0A%0A➜<b>Size:</b> <code>$(du -sh $file | cut -d o -f 1 | cut -d / -f 4 | cut -d - -f 1)</code>%0A%0A➜<b>Download Link:</b> <a href='$link'>Click Here</a>%0A%0A➜<b>Time Took:</b> <code>$(($DIFF / 60))Min $(($DIFF % 60))Sec</code>%0A%0A➜<b>Total Disk used:</b> <code>$(du -sh)</code>%0A%0A➜<b>Build Date:</b> <code>$(date)</code>%0A%0A<b>◦•●◉✿ by Sã Śâjjãd ✿◉●•◦</b>"
+	       bot_msg "◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦%0A%0A➜<b>Name:</b> <code>$dlink</code>%0A%0A➜<b>Size:</b> <code>$(du -sh $file | cut -d o -f 1 | cut -d / -f 4 | cut -d - -f 1)</code>%0A%0A➜<b>Download Link:</b> <a href='$link'>Click Here</a>%0A%0A➜<b>Time Took:</b> <code>$t_time</code>%0A%0A➜<b>Total Disk used:</b> <code>$(du -sh)</code>%0A%0A➜<b>Build Date:</b> <code>$(date)</code>%0A%0A<b>◦•●◉✿ by Sã Śâjjãd ✿◉●•◦</b>"
 	       # Remove Compile zip
 	       rm -rf $file
 	fi
