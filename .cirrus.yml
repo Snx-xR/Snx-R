@@ -34,8 +34,8 @@ task:
   trees_script:
     - cd ~/$rom_name
     - git clone --depth 1 https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/device_xiaomi_lavender-14 -b matrix device/xiaomi/lavender
-    - git clone --depth 1 https://github.com/Sa-Sajjad/vendor_xiaomi_lavender -b matrix-14 vendor/xiaomi/lavender
-    - git clone --depth 1 https://github.com/Sa-Sajjad/kernel_xiaomi_lavender-neko -b neko-qti kernel/xiaomi/lavender
+    - git clone --depth 1 https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/vendor_xiaomi_lavender -b matrix-14 vendor/xiaomi/lavender
+    - git clone --depth 1 https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/kernel_xiaomi_lavender-neko -b neko-qti kernel/xiaomi/lavender
 
   # sync_script:
     # - bash <(curl -s $script/sync.sh)
