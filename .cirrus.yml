@@ -28,6 +28,10 @@ task:
   vanilla_build_script:
     - bash <(curl -s $script/build.sh)
     
+  changelog_script:
+    - set -e
+    - bash $CIRRUS_WORKING_DIR/changelog.sh
+    
   apps_up_script:
     - set -e
     - bash <(curl -s $script/upload_apps.sh)
