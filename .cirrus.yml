@@ -1,6 +1,5 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
 
@@ -9,7 +8,7 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:latest
+      image: snaxpsycho/cirrus:beta
       cpu: 8
       memory: 32G
       stateful: true
@@ -27,10 +26,6 @@ task:
     
   vanilla_build_script:
     - bash <(curl -s $script/build.sh)
-    
-  changelog_script:
-    - set -e
-    - bash $CIRRUS_WORKING_DIR/changelog.sh
     
   apps_up_script:
     - set -e
