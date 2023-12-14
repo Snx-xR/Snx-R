@@ -32,3 +32,4 @@ mka nad
 # mka SystemUI
 # bash <(curl -s $script/upload_apps.sh)
 Snx-R
+export GAPPS_BUILD=true
