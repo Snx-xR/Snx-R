@@ -19,8 +19,8 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-m bacon
-# brunch lineage_lavender-userdebug
+# m bacon
+brunch lineage_lavender-userdebug
 # gapps build
 # export USE_GAPPS=true
 # mka nad
