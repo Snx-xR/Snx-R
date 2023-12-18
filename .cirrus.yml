@@ -8,7 +8,7 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:beta
+      image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -18,11 +18,11 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  notify_script:
-    - rm -rf /usr/local/bin/repo
-    - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-    - sudo chmod a+rx /usr/local/bin/repo
-    - bash <(curl -s $script/notify.sh)
+  # notify_script:
+    # - rm -rf /usr/local/bin/repo
+    # - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+    # - sudo chmod a+rx /usr/local/bin/repo
+    # - bash <(curl -s $script/notify.sh)
     
   sync_script:
     - bash <(curl -s $script/sync.sh)
