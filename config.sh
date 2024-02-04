@@ -6,8 +6,6 @@ git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b mtx-14 .repo/local_
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-export BUILD_USERNAME=snaxpsycho
-export BUILD_HOSTNAME=snaxpsycho_beta
 lunch lineage_lavender-userdebug
 
 # export extra module
@@ -17,9 +15,9 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export RELAX_USES_LIBRARY_CHECK=true
-make api-stubs-docs || echo no problem
-make system-api-stubs-docs || echo no problem
-make test-api-stubs-docs || echo no problem
+# make api-stubs-docs || echo no problem
+# make system-api-stubs-docs || echo no problem
+# make test-api-stubs-docs || echo no problem
 # vanilla build
 m bacon
 
