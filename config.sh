@@ -14,7 +14,8 @@ make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
 mka nad
-export GAPPS_BUILD=true
+export GAPPS_BUILD=false
+export RELEASE=false
 Snx-R
 # export GAPPS_BUILD=true
 # # only specific app build
