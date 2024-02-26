@@ -5,7 +5,7 @@ git clone https://github.com/Amritorock/local_manifest --depth 1 -b 10 .repo/loc
 # sync script
 repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
 source build/envsetup.sh
-lunch nad_r5x-userdebug
+lunch nad_r5x-eng
 # export extra module
 export TZ=Asia/Dhaka
 # export SELINUX_IGNORE_NEVERALLOWS=true
