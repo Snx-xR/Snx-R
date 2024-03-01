@@ -1,6 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Nusantara
+    rom_name: mtx
     device: lavender
 
 task:
