@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
-    device: lavender
+    device: r5x
 
 task:
   name: "Snx-R"
