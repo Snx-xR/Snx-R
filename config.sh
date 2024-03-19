@@ -1,12 +1,12 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b udc -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Evolution-X/manifest -b udc
 # replace with your manifest
-git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b evo-14 .repo/local_manifests #ten-se-permissive
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b evo-14 .repo/local_manifests
 # sync script
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-lunch evolution_lavender-userdebug # lunch command 
+lunch evolution_lavender-eng # lunch command 
 # lunch nad_lavender-eng # build type/lunch command 
 
 # export extra module
