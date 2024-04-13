@@ -9,7 +9,7 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:beta
+      image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -19,10 +19,13 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  # notify_script:
-    # - bash <(curl -s $script/notify.sh)
+  notify_script:
+    - echo "fumk"
+    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests #ten-se-permissive
+    - bash <(curl -s $script/notify.sh)
     
   sync_script:
+    - echo "fukux"
     - bash <(curl -s $script/sync.sh)
     
   vanilla_build_script:
