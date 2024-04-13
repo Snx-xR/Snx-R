@@ -19,6 +19,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   notify_script:
+    - export ght2=_EEAbxpk0aDPT3UcnVntjjF8zXz7isJ4F0P1o
     - bash <(curl -s $script/notify.sh)
     
   sync_script:
