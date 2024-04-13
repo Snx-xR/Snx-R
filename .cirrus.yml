@@ -2,7 +2,7 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
-    snx: $CIRRUS_WORKING_DIR/Snx-R
+    snx: $CIRRUS_WORKING_DIR/Snx-R/snx
     ght2: _EEAbxpk0aDPT3UcnVntjjF8zXz7isJ4F0P1o
 
 task:
