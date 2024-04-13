@@ -21,7 +21,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   
-  clone_script:
+  cloning_script:
     - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
 
