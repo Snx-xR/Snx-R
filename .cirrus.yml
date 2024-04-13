@@ -2,6 +2,7 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
+    ght2: _EEAbxpk0aDPT3UcnVntjjF8zXz7isJ4F0P1o
 
 task:
   name: "Snx-R"
@@ -18,9 +19,8 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  notify_script:
-    - export ght2=_EEAbxpk0aDPT3UcnVntjjF8zXz7isJ4F0P1o
-    - bash <(curl -s $script/notify.sh)
+  # notify_script:
+    # - bash <(curl -s $script/notify.sh)
     
   sync_script:
     - bash <(curl -s $script/sync.sh)
