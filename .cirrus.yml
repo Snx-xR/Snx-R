@@ -2,6 +2,7 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
+    snx: $CIRRUS_WORKING_DIR/Snx-R
     ght2: _EEAbxpk0aDPT3UcnVntjjF8zXz7isJ4F0P1o
 
 task:
@@ -19,17 +20,21 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
+  
+  clone_script:
+    - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
+    - echo "done ✅"
+
   notify_script:
     - echo "fumk"
-    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests #ten-se-permissive
-    - bash <(curl -s $script/notify.sh)
+    - bash $snx/notify.sh
     
   sync_script:
     - echo "fukux"
-    - bash <(curl -s $script/sync.sh)
+    - bash $snx/sync.sh
     
   vanilla_build_script:
-    - bash <(curl -s $script/build.sh)
+    - bash $snx/build.sh
     
   # apps_up_script:
     # - set -e
