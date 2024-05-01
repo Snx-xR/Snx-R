@@ -23,6 +23,7 @@ task:
   cloning_script:
     - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
+    - df -h .
 
   notify_script:
     - echo "fumk"
@@ -31,9 +32,11 @@ task:
   sync_script:
     - echo "fukux"
     - bash $snx/sync.sh
+    - df -h .
     
   vanilla_build_script:
     - bash $snx/build.sh
+    - df -h .
     
   # apps_up_script:
     # - set -e
