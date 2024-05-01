@@ -1,19 +1,17 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/Nusantara-SiXtY-N9/android_manifest_nusa.git -b stock
+repo init --depth=1 -u https://github.com/ProjectMatrixx/android.git -b 14.0 --git-lfs
 # replace with your manifest
-git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b los-21 .repo/local_manifests
 # sync script
 repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
+# /opt/crave/resync.sh
+# lunch command paste here
 source build/envsetup.sh
-lunch nad_lavender-userdebug
+rm -rf packages/apps/Trebuchet
+echo "Done ✅"
+rm -rf packages/overlays/Lineage
+lunch lineage_lavender-ap1a-eng
 # export extra module
-export TZ=Asia/Dhaka
-# export SELINUX_IGNORE_NEVERALLOWS=true
-make api-stubs-docs || echo no problem
-make system-api-stubs-docs || echo no problem
-make test-api-stubs-docs || echo no problem
-# vanilla build
-mka nad
-export GAPPS_BUILD=false
-export RELEASE=true
+make installclean
+brunch lavender
 Snx-R
