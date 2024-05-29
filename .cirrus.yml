@@ -27,13 +27,14 @@ task:
   notify_script:
     - echo "fumk"
     - bash $snx/notify.sh
+    - $CIRRUS_WORKING_DIR/twrp.sh
     
-  sync_script:
-    - echo "fukux"
-    - bash $snx/sync.sh
+  # sync_script:
+    # - echo "fukux"
+    # - bash $snx/sync.sh
     
-  vanilla_build_script:
-    - bash $snx/build.sh
+  # vanilla_build_script:
+    # - bash $snx/build.sh
     
   # apps_up_script:
     # - set -e
