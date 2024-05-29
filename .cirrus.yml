@@ -27,7 +27,7 @@ task:
   notify_script:
     - echo "fumk"
     - bash $snx/notify.sh
-    - $CIRRUS_WORKING_DIR/twrp.sh
+    - bash $CIRRUS_WORKING_DIR/twrp.sh
     
   # sync_script:
     # - echo "fukux"
