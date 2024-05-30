@@ -14,5 +14,6 @@ export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka recoveryimage
 cd out/target/product/$device
+ls
 rsync -vhcP -e ssh re*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/ && rsync -vhcP -e ssh tw*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/ && rsync -vhcP -e ssh *.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
 rsync -vhcP -e ssh *.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
