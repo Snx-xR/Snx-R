@@ -14,8 +14,6 @@ git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender-udc.git kern
 git clone --depth 1 git@github.com:Sa-Sajjad/recovery_lavender.git device/xiaomi/lavender
 git clone --depth 1 -b nexus-14  https://gitlab.com/Project-Nexus/nexus-clang.git clang
 export ALLOW_MISSING_DEPENDENCIES=true
-clang --version
-echo "xddd"
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka recoveryimage
 
