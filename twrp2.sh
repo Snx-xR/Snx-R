@@ -8,6 +8,7 @@ sudo bash setup/install_android_sdk.sh
 mkdir ~/twrp
 cd ~/twrp
 repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+repo sync
 # git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender-udc.git kernel/xiaomi/lavender
 git clone --depth 1 git@github.com:Sa-Sajjad/recovery_lavender.git device/xiaomi/lavender
 rm -rf device/xiaomi/lavender/fox_lavender.mk && touch device/xiaomi/lavender/fox_lavender.mk
