@@ -24,18 +24,6 @@ task:
     - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
 
-  notify_script:
-    - bash $snx/notify.sh
-    
-  build_setup_script:
-    - cd ~
-    - sudo apt install git aria2 -y
-    - rm -rf scripts
-    - git clone https://gitlab.com/OrangeFox/misc/scripts
-    - cd scripts
-    - sudo bash setup/android_build_env.sh
-    - sudo bash setup/install_android_sdk.sh
-
   build_script:
     - bash $snx/notify.sh
     - bash $CIRRUS_WORKING_DIR/twrp.sh
