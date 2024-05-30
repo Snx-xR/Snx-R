@@ -23,12 +23,14 @@ task:
   cloning_script:
     - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
+
   notify_script:
     - bash $snx/notify.sh
     
   build_setup_script:
     - cd ~
     - sudo apt install git aria2 -y
+    - rm -rf scripts
     - git clone https://gitlab.com/OrangeFox/misc/scripts
     - cd scripts
     - sudo bash setup/android_build_env.sh
