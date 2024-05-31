@@ -19,16 +19,18 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  
-  # cloning_script:
-    # - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
-    # - echo "done ✅"
+  twrp_script:
+    - bash $CIRRUS_WORKING_DIR/twrp.sh
 
-  build_script:
-    # - bash $snx/notify.sh
+  twrp_up_script:
+    - cd ~/twrp
+    - bash $CIRRUS_WORKING_DIR/upload.sh
+    
+  ofx_script:
     - bash $CIRRUS_WORKING_DIR/ofx.sh
     
   gh_release_script:
+    - cd ~/OrangeFox
     - bash $CIRRUS_WORKING_DIR/upload.sh
     # - bash $snx/sync.sh
     

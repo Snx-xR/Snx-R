@@ -1,9 +1,9 @@
-cd ~
-sudo apt install git aria2 -y
-git clone https://gitlab.com/OrangeFox/misc/scripts
-cd scripts
-sudo bash setup/android_build_env.sh
-sudo bash setup/install_android_sdk.sh
+# cd ~
+# sudo apt install git aria2 -y
+# git clone https://gitlab.com/OrangeFox/misc/scripts
+# cd scripts
+# sudo bash setup/android_build_env.sh
+# sudo bash setup/install_android_sdk.sh
 mkdir ~/OrangeFox_sync
 cd ~/OrangeFox_sync
 git clone https://gitlab.com/OrangeFox/sync.git # (or, using ssh, "git clone git@gitlab.com:OrangeFox/sync.git")
