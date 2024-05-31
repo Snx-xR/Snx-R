@@ -14,7 +14,6 @@ cd ~/OrangeFox
 git clone --depth 1 git@github.com:Sa-Sajjad/recovery_lavender.git -b 14.0 device/xiaomi/lavender
 # git clone --depth 1 -b nexus-14  https://gitlab.com/Project-Nexus/nexus-clang.git clang
 export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_USE_DYNAMIC_PARTITIONS=0
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka recoveryimage
 rsync -vhcP -e ssh out/target/product/$device/OrangeFox*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
