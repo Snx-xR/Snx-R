@@ -20,16 +20,16 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   
-  cloning_script:
-    - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
-    - echo "done ✅"
+  # cloning_script:
+    # - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
+    # - echo "done ✅"
 
   build_script:
-    - bash $snx/notify.sh
+    # - bash $snx/notify.sh
     - bash $CIRRUS_WORKING_DIR/ofx.sh
     
-  # sync_script:
-    # - echo "fukux"
+  gh_release_script:
+    - bash $CIRRUS_WORKING_DIR/upload.sh
     # - bash $snx/sync.sh
     
   # vanilla_build_script:
