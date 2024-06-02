@@ -19,15 +19,15 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  twrp_script:
-    - bash $CIRRUS_WORKING_DIR/twrp.sh
+  # twrp_script:
+    # - bash $CIRRUS_WORKING_DIR/twrp.sh
 
   # twrp_up_script:
     # - cd ~/twrp
     # - bash $CIRRUS_WORKING_DIR/upload.sh
     
-  # ofx_script:
-    # - bash $CIRRUS_WORKING_DIR/ofx.sh
+  ofx_script:
+    - bash $CIRRUS_WORKING_DIR/ofx.sh
     
   gh_release_script:
     - cd ~/OrangeFox
