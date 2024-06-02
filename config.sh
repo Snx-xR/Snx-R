@@ -15,5 +15,5 @@ make test-api-stubs-docs || echo no problem
 # vanilla build
 mka nad
 export GAPPS_BUILD=false
-export RELEASE=true
+export RELEASE=false
 Snx-R
