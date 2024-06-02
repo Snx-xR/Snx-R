@@ -28,4 +28,4 @@ echo -e "$FZ"
 echo -e "Start uploading file on github..."
 
 gh release create "$FZ" --generate-notes --repo "$GH"
-gh release upload "$FZ" --repo "$GH" "$FP" "FP2"
+gh release upload "$FZ" --repo "$GH" "$FP"
