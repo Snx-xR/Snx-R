@@ -57,5 +57,3 @@ echo -e "Start uploading file on github..."
 
 gh release create "$FZ" --generate-notes --repo "$GH"
 gh release upload "$FZ" --repo "$GH" "$ZIP_FILES" "$IMG_FILES"
-
-gh release upload 
