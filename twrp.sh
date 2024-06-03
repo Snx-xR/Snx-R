@@ -6,11 +6,7 @@ repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
 git clone --depth 1 git@github.com:Sa-Sajjad/recovery_lavender.git -b twrp device/xiaomi/lavender
 # git clone --depth 1 -b nexus-14  https://gitlab.com/Project-Nexus/nexus-clang.git clang
 export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_LAVENDER_KERNEL=4.4
-export FOX_BUILD_FULL_KERNEL_SOURCES=0
-export FOX_USE_DYNAMIC_PARTITIONS=0
+export FOX_BUILD_FULL_KERNEL_SOURCES=1
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka recoveryimage
-cd out/target/product/$device
-ls
-rsync -vhcP -e ssh re*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/
+rsync -vhcP -e ssh out/target/product/$device/re*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/recovery/
