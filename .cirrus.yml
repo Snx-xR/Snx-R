@@ -32,7 +32,9 @@ task:
   sync_script:
     - echo "fukux"
     - bash $snx/sync.sh
-    - df -h .
+
+  free_script:
+    - df -h
     
   vanilla_build_script:
     - bash $snx/build.sh
