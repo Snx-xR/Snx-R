@@ -36,6 +36,7 @@ task:
     - git clone git@github.com:Sa-Sajjad/vendor_xiaomi_lavender-14.git -b GAY vendor/xiaomi/lavender
     - git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender_unitrix.git -b QPR2 kernel/xiaomi/lavender
     - git clone https://github.com/PixelOS-AOSP/hardware_xiaomi hardware/xiaomi
+    - source build/envsetup.sh && lunch aosp_lavender-ap2a-eng
     
   free_space_script:
     - df -h .
