@@ -29,6 +29,9 @@ task:
   
   sync_script:
     - bash $snx/sync.sh
+    
+  free_space_script:
+    - df -h .
   
   vanilla_build_script:
     - bash $snx/build.sh

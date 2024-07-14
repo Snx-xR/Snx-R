@@ -1,9 +1,9 @@
 # add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/Nusantara-SiXtY-N9/android_manifest_nusa.git -b 10
+repo init -u https://github.com/PixelBuildsROM/android_manifest -b unity --depth=1
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests
 # sync script
-repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 source build/envsetup.sh
 export TZ=Asia/Dhaka
 lunch nad_lavender-user
