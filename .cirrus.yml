@@ -20,7 +20,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   twrp_script:
-    - df -h
+    - df -h .
   twrp3_script:
     - free -m
     # - bash $CIRRUS_WORKING_DIR/twrp.sh
