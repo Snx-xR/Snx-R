@@ -27,14 +27,14 @@ task:
   notify_script:
     - bash $snx/notify.sh
   
+  sync_script:
+    - bash $snx/sync.sh
+    
   dt_script:
     - cd ~/$rom_name
     - git clone git@github.com:Sa-Sajjad/device_xiaomi_lavender-14.git -b GAY device/xiaomi/lavender
     - git clone git@github.com:Sa-Sajjad/vendor_xiaomi_lavender-14.git -b GAY vendor/xiaomi/lavender
-    - git clone --depth 20 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender_unitrix.git -b QPR2 kernel/xiaomi/lavender
-    
-  sync_script:
-    - bash $snx/sync.sh
+    - git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender_unitrix.git -b QPR2 kernel/xiaomi/lavender
     
   free_space_script:
     - df -h .
