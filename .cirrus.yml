@@ -20,18 +20,21 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   twrp_script:
-    - bash $CIRRUS_WORKING_DIR/twrp.sh
+    - df -h
+  twrp3_script:
+    - free -m
+    # - bash $CIRRUS_WORKING_DIR/twrp.sh
 
-  twrp_up_script:
-    - cd ~/twrp
-    - bash $CIRRUS_WORKING_DIR/upload.sh
+  # twrp_up_script:
+    # - cd ~/twrp
+    # - bash $CIRRUS_WORKING_DIR/upload.sh
     
-  ofx_script:
-    - bash $CIRRUS_WORKING_DIR/ofx.sh
+  # ofx_script:
+    # - bash $CIRRUS_WORKING_DIR/ofx.sh
     
-  gh_release_script:
-    - cd ~/OrangeFox
-    - bash $CIRRUS_WORKING_DIR/upload.sh
+  # gh_release_script:
+    # - cd ~/OrangeFox
+    # - bash $CIRRUS_WORKING_DIR/upload.sh
     # - bash $snx/sync.sh
     
   # vanilla_build_script:
