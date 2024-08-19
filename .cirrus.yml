@@ -30,12 +30,12 @@ task:
   sync_script:
     - bash $snx/sync.sh
     
-  dt_script:
-    - cd ~/$rom_name
-    - git clone git@github.com:Sa-Sajjad/device_xiaomi_lavender-14.git -b pixel device/xiaomi/lavender
-    - git clone git@github.com:Sa-Sajjad/vendor_xiaomi_lavender-14.git -b GAY vendor/xiaomi/lavender
-    - git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender_unitrix.git -b QPR2 kernel/xiaomi/lavender
-    - git clone https://github.com/PixelOS-AOSP/hardware_xiaomi hardware/xiaomi
+  # dt_script:
+    # - cd ~/$rom_name
+    # - git clone git@github.com:Sa-Sajjad/device_xiaomi_lavender-4.19.git -b uvite device/xiaomi/lavender
+    # - git clone git@github.com:Sa-Sajjad/vendor_xiaomi_lavender-4.19.git -b uvite vendor/xiaomi/lavender
+    # - git clone --depth 1 git@github.com:Sa-Sajjad/kernel_xiaomi_lavender-4.19.git -b 14.0 kernel/xiaomi/lavender
+    # - git clone https://github.com/PixelOS-AOSP/hardware_xiaomi hardware/xiaomi
     
   free_space_script:
     - df -h .

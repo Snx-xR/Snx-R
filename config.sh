@@ -1,20 +1,19 @@
 # add repo, dt, vt, kt etc.
 # repo init -u https://github.com/PixelBuildsROM/android_manifest -b unity --depth=1
-repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1
+repo init -u https://github.com/AOSPA/manifest -b uvite
 # replace with your manifest
-# git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b aospa .repo/local_manifests
 # sync script
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-source build/envsetup.sh
+source build/envsetup.sh && lunch aospa_lavender-eng
 export TZ=Asia/Dhaka
-lunch aosp_lavender-ap2a-eng
 # export extra module
 # export SELINUX_IGNORE_NEVERALLOWS=true
 # make api-stubs-docs || echo no problem
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
 # vanilla build
-mka bacon
+./rom-build.sh lavender
 export GAPPS_BUILD=false
 export RELEASE=false
 Snx-R
