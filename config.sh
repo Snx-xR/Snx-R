@@ -17,7 +17,3 @@ export TZ=Asia/Dhaka
 export GAPPS_BUILD=false
 export RELEASE=false
 Snx-R
-
-# crave run --no-patch "source build/envsetup.sh && lunch aospa_lavender-eng
-# export TZ=Asia/Dhaka
-# ./rom-build.sh lavender"
