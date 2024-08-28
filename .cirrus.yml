@@ -1,6 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Nusantara
+    rom_name: Qassa
     device: lavender
     snx: $CIRRUS_WORKING_DIR/Snx-R/snx
 
