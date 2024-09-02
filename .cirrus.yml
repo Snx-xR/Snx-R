@@ -1,6 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Nusantara
+    rom_name: Orion
     device: lavender
     snx: $CIRRUS_WORKING_DIR/Snx-R/snx
 
@@ -26,6 +26,9 @@ task:
 
   notify_script:
     - bash $snx/notify.sh
+  
+  remove_script:
+    - cd ~/$rom_name && kernel/xiaomi/lavender/Android.bp
   
   sync_script:
     - bash $snx/sync.sh
