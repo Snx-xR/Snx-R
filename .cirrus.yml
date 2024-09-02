@@ -27,12 +27,12 @@ task:
   notify_script:
     - bash $snx/notify.sh
   
-  remove_script:
-    - cd ~/$rom_name && kernel/xiaomi/lavender/Android.bp
-  
   sync_script:
     - bash $snx/sync.sh
     
+  remove_script:
+    - cd ~/$rom_name && mv kernel/xiaomi/lavender/Android.bp kernel/xiaomi/lavender/Android.bp.txt
+
   # dt_script:
     # - cd ~/$rom_name
     # - git clone git@github.com:Sa-Sajjad/device_xiaomi_lavender-4.19.git -b uvite device/xiaomi/lavender
