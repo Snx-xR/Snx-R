@@ -17,7 +17,8 @@ lunch nad_lavender-user
 # make test-api-stubs-docs || echo no problem
 # vanilla build
 # mka nad
-m settings
+m framework
+# m Settings
 export GAPPS_BUILD=false
 export RELEASE=true
 Snx-R
