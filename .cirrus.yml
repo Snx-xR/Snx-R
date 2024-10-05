@@ -19,9 +19,8 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  
   cloning_script:
-    - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
+    - git clone https://Sa-Sajjad:$ght@github.com/Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
     - df -h .
 
@@ -33,6 +32,9 @@ task:
   
   vanilla_build_script:
     - bash $snx/build.sh
+
+  complete_script:
+    - df -h .
   
   # apps_up_script:
     # - set -e

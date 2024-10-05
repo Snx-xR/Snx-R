@@ -20,5 +20,6 @@ mka nad
 # m framework
 # m Settings
 export GAPPS_BUILD=false
-export RELEASE=true
+export RELEASE=false
+rsync -vhcP -e ssh out/target/product/lavender/system/product/priv-app/Settings/Settings.apk sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/app/
 Snx-R
