@@ -11,7 +11,7 @@ export WITH_GAPPS=true
 export EXTRA_GAPPS=false
 lunch nad_lavender-user
 # export extra module
-# export SELINUX_IGNORE_NEVERALLOWS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 # make api-stubs-docs || echo no problem
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
