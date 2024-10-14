@@ -21,5 +21,5 @@ mmm device/xiaomi/lavender/XiaomiParts
 # m framework
 # m Settings
 export RELEASE=true
-# rsync -vhcP -e ssh out/target/product/lavender/system/product/priv-app/Settings/Settings.apk sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/app/
+rsync -vhcP -e ssh out/target/product/lavender/system/priv-app/XiaomiParts/XiaomiParts.apk sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/app/
 Snx-R
