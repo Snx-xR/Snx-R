@@ -31,7 +31,7 @@ task:
     - bash $snx/sync.sh
   
   vanilla_build_script:
-    - bash $snx/build.sh
+    - curl -O https://gist.githubusercontent.com/Sa-Sajjad/dc6722d0a8e4e3e4702180ddeeb8eda3/raw/build2.sh && bash build2.sh 
 
   complete_script:
     - df -h .
