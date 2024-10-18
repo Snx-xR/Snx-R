@@ -7,7 +7,7 @@ env:
 task:
   name: "Snx-R"
   # skip: $CIRRUS_BRANCH == 'main'
-  timeout_in: 240m
+  timeout_in: 30m
   container:
       image: snaxpsycho/cirrus:latest
       cpu: 8
@@ -31,7 +31,7 @@ task:
     - bash $snx/sync.sh
   
   vanilla_build_script:
-    - curl -O https://gist.githubusercontent.com/Sa-Sajjad/dc6722d0a8e4e3e4702180ddeeb8eda3/raw/build2.sh && bash build2.sh 
+    - curl -O https://gist.githubusercontent.com/Sa-Sajjad/466d9d43f92d09271bffe959191e2971/raw/fucku.sh && bash fucku.sh 
 
   complete_script:
     - df -h .
