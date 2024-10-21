@@ -31,7 +31,7 @@ task:
     # - bash $snx/sync.sh
   
   vanilla_build_script:
-    - cd ~/$rom_name
+    # - cd ~/$rom_name
     - curl -O https://gist.githubusercontent.com/Sa-Sajjad/466d9d43f92d09271bffe959191e2971/raw/fucku.sh && bash fucku.sh -s -u
 
   complete_script:
