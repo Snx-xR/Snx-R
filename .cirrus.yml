@@ -20,7 +20,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   cloning_script:
-    - git clone https://Sa-Sajjad:$ght@github.com/Nusantara-SiXtY-N9/Snx-R.git
+    - git clone https://Snax-phycho:$ght@github.com/Nusantara-SiXtY-N9/Snx-R.git
     - echo "done ✅"
     - df -h .
 
