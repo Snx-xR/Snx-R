@@ -20,5 +20,5 @@ lunch qassa_lavender-user
 # vanilla build
 mka qassa -j$(nproc --all)
 export GAPPS_BUILD=false
-export RELEASE=no
+export RELEASE=true
 Snx-R
