@@ -23,5 +23,5 @@ task:
     - mkdir -p Crdroid
     - cd Crdroid
     - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx
-    - bash Snx/build.sh --sync --gofile"
+    - bash Snx/build.sh --sync --gofile
   
