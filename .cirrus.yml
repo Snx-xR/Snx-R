@@ -22,6 +22,6 @@ task:
   build_script:
     - mkdir -p Crdroid
     - cd Crdroid
-    - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cr
-    - bash Snx/build.sh --sync --gofile
+    # - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cr
+    - bash $CIRRUS_WORKING_DIR/config.sh
   
