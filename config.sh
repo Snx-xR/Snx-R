@@ -12,6 +12,5 @@ breakfast lavender
 # export TZ=Asia/Dhaka
 # make installclean
 # brunch lavender
-cd device/xiaomi/lavender/parts
-mm
+mka bootimage
 Snx-R
