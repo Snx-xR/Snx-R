@@ -22,6 +22,10 @@ task:
   build_script:
     - mkdir -p Crdroid
     - cd Crdroid
-    # - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cr
-    - bash $CIRRUS_WORKING_DIR/config.sh
-  
+    - cd repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
+    - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
+    - repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
+
+  compile_script:
+    - cd Crdroid
+    - source build/envsetup.sh && breakfast lavender && mka bootimage
