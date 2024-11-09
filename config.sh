@@ -13,4 +13,3 @@ breakfast lavender
 # make installclean
 # brunch lavender
 mka bootimage
-Snx-R
