@@ -19,8 +19,11 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  build_script:
+  space_script:
     - mkdir -p Crdroid
+    - df h .
+
+  build_script:
     - cd Crdroid
     - repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
     - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
