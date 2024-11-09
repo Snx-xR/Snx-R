@@ -21,7 +21,7 @@ task:
           
   space_script:
     - mkdir -p Crdroid
-    - df h .
+    - df -h .
 
   build_script:
     - cd Crdroid
