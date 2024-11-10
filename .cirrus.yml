@@ -28,7 +28,9 @@ task:
     - repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
     - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
     - repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
+    - df -h .
 
   compile_script:
     - cd Crdroid
-    - source build/envsetup.sh && breakfast lavender && mka bootimage
+    - source build/envsetup.sh && breakfast lavender && export SELINUX_IGNORE_NEVERALLOWS=true && brunch lavender
+    - df -h .
