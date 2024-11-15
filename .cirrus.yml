@@ -36,7 +36,7 @@ task:
   complete_script:
     - df -h .
     - cd $rom_name
-    - curl -O https://raw.githubusercontent.com/Sushrut1101/GoFile-Upload/refs/heads/master/upload.sh && upload.sh file=out/target/product/$device/*.zip
+    - curl -O https://raw.githubusercontent.com/Sushrut1101/GoFile-Upload/refs/heads/master/upload.sh && upload.sh out/target/product/$device/*.zip
   
   # apps_up_script:
     # - set -e
