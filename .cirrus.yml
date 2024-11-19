@@ -2,7 +2,8 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
-    snx: $CIRRUS_WORKING_DIR/Snx-R/snx
+    TELEGRAM_ID: $tg_id
+    BOT_API: $bot_api
 
 task:
   name: "Snx-R"
