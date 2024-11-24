@@ -1,8 +1,9 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Qassa
+    rom_name: Nusantara
     device: lavender
-    snx: $CIRRUS_WORKING_DIR/Snx-R/snx
+    TELEGRAM_ID: $tg_id
+    BOT_API: $bot_api
 
 task:
   name: "Snx-R"
@@ -19,29 +20,7 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  
-  cloning_script:
-    - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
-    - echo "done ✅"
-    - df -h .
-
-  notify_script:
-    - bash $snx/notify.sh
-  
-  sync_script:
-    - bash $snx/sync.sh
-  
-  vanilla_build_script:
-    - bash $snx/build.sh
-  
-  # apps_up_script:
-    # - set -e
-    # - bash <(curl -s $script/upload_apps.sh)
-    
-  # gapps_build_script:
-    # - set -e
-    # - bash <(curl -s $script/gapps_build.sh)
-    
-  # gapps_up_script:
-    # - set -e
-    # - bash <(curl -s $script/sfg_uploader.sh)
+  compiling_script:
+    - mkdir Qassa && cd Qassa
+    - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b nusa
+    - bash Snx/build.sh --sync -sf
