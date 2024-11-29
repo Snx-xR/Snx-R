@@ -23,8 +23,8 @@ task:
   repo_script:
     - mkdir Qassa
     - rm /usr/local/bin/repo
-    - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-    - sudo chmod a+rx /usr/local/bin/repo
+    - curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+    - chmod a+rx /usr/local/bin/repo
     
   compiling_script:
     - cd Qassa
