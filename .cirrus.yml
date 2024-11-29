@@ -24,7 +24,7 @@ task:
     - mkdir Qassa
     - df -h .
     - repo --version
-    - cd .repo/repo
+    - cd /usr/local/bin/repo
     - git pull -r
     - cd -
     - repo --version
