@@ -20,19 +20,20 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  repo_script:
-    - mkdir $rom
-    - rm /usr/local/bin/repo
-    - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-    - sudo chmod a+rx /usr/local/bin/repo
+  # repo_script:
+    # - mkdir $rom
+    # - rm /usr/local/bin/repo
+    # - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+    # - sudo chmod a+rx /usr/local/bin/repo
     
   compiling_script:
-    - cd $rom
+    - mkdir -p ~/$rom
+    - cd ~/$rom
     - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cirrus
     - bash Snx/build.sh --sync -sf
 
   dirs_script:
-    - cd $rom
+    - cd ~/$rom
     - curl -O https://raw.githubusercontent.com/Sushrut1101/GoFile-Upload/refs/heads/master/upload.sh
     - bash upload.sh out/target/product/$device/*.zip
     - echo -e "done"
