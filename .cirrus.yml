@@ -1,6 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Nusantara
+    rom: Qassa
     device: lavender
     TELEGRAM_ID: $tg_id
     BOT_API: $bot_api
@@ -21,32 +21,19 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
           
   repo_script:
-    - mkdir Qassa
+    - mkdir $rom
     - rm /usr/local/bin/repo
     - sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
     - sudo chmod a+rx /usr/local/bin/repo
     
   compiling_script:
-    - cd Qassa
+    - cd $rom
     - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cirrus
     - bash Snx/build.sh --sync -sf
 
-task:
-  name: "upload on gofile"
-  depends_on: Snx-R
-  timeout_in: 10m
-  container:
-      image: snaxpsycho/crave:ubuntu
-      cpu: 4
-      memory: 16G
-      stateful: true
-      greedy: true
-      volumes:
-          - /home/cirrus:/home/cirrus
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
-          
   dirs_script:
-    - cd Qassa
+    - cd $rom
     - curl -O https://raw.githubusercontent.com/Sushrut1101/GoFile-Upload/refs/heads/master/upload.sh
     - bash upload.sh out/target/product/$device/*.zip
+    - echo -e "done"
+    
