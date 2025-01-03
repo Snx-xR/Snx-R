@@ -10,7 +10,8 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 240m
   container:
-      image: snaxpsycho/cirrus:latest
+      image: snaxpsycho/crave:ubuntu
+      # image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -23,4 +24,4 @@ task:
   compiling_script:
     - mkdir Nusantara && cd Nusantara
     - git clone https://Snax-phycho:$ght@github.com/Snax-phycho/Snx -b cirrus
-    - bash Snx/build.sh --sync -sf
+    - bash Snx/build.sh --sync -sf -gf
