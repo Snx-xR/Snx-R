@@ -25,10 +25,26 @@ task:
 
   build_script:
     - cd Crdroid
-    - repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
-    - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
-    - repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
+    - repo init -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs
+    # - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
+    - repo sync -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
+
+  source_script:
+    - cd Crdroid
+    - echo -e "Cloning device tree"
+    - git clone git@github.com:Sa-Sajjad/device_xiaomi_lavender-4.19.git -b wip device/xiaomi/lavender > /dev/null 2>&1
+    - echo -e "Cloning vendor tree"
+    - git clone git@github.com:Sa-Sajjad/vendor_xiaomi_lavender-4.19.git -b 14.0 vendor/xiaomi/lavender > /dev/null 2>&1
+    - echo -e "Cloning kernel tree"
+    - git clone git@github.com:Sa-Sajjad/kernel_xiaomi_lavender-4.19.git -b 15.0 kernel/xiaomi/lavender --depth 10 > /dev/null 2>&1
+    - echo -e "Cloning recommend hals"
+    - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_display -b 15.0 hardware/qcom-caf/msm8998/display > /dev/null 2>&1
+    - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_audio -b 15.0 hardware/qcom-caf/msm8998/audio > /dev/null 2>&1
+    - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_media -b 15.0 hardware/qcom-caf/msm8998/media > /dev/null 2>&1
+    - git clone git@github.com:Sa-Sajjad/vendor_signkeys vendor/extra > /dev/null 2>&1
+    - git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-22.1 hardware/xiaomi > /dev/null 2>&1
 
   compile_script:
     - cd Crdroid
-    - source build/envsetup.sh && breakfast lavender && mka bootimage
+    - source build/envsetup.sh && breakfast lavender && brunch lavender
+    
