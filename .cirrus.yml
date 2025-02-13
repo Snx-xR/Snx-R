@@ -39,6 +39,7 @@ task:
     - echo -e "Cloning kernel tree"
     - git clone git@github.com:Sa-Sajjad/kernel_xiaomi_lavender-4.19.git -b 15.0 kernel/xiaomi/lavender --depth 10
     - echo -e "Cloning recommend hals"
+    - rm -rf -v hardware/qcom-caf/msm8998/au* hardware/qcom-caf/msm8998/me* hardware/qcom-caf/msm8998/di* hardware/xiaomi
     - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_display -b 15.0 hardware/qcom-caf/msm8998/display
     - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_audio -b 15.0 hardware/qcom-caf/msm8998/audio
     - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_media -b 15.0 hardware/qcom-caf/msm8998/media
