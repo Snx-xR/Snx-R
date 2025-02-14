@@ -7,7 +7,7 @@ env:
 task:
   name: "Snx-R"
   # skip: $CIRRUS_BRANCH == 'main'
-  timeout_in: 240m
+  timeout_in: 60m
   container:
       image: snaxpsycho/crave:ubuntu
       # image: snaxpsycho/cirrus:latest
@@ -45,6 +45,9 @@ task:
     - git clone https://github.com/Sa-Sajjad/android_hardware_qcom_media -b 15.0 hardware/qcom-caf/msm8998/media
     - git clone git@github.com:Sa-Sajjad/vendor_signkeys vendor/extra
     - git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-22.1 hardware/xiaomi
+    
+  free_script:
+    - df -h .
 
   compile_script:
     - cd Crdroid
