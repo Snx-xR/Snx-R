@@ -26,7 +26,7 @@ task:
 
   build_script:
     - cd Crdroid
-    - repo init -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs
+    - repo init -u https://github.com/OrionOS-Project/manifest -b vic --git-lfs
     # - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr-14 .repo/local_manifests
     - repo sync -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 
