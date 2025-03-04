@@ -17,7 +17,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 # make test-api-stubs-docs || echo no problem
 # mka nad
 make SystemUI
-cd packages/apps/Launcher3 && mma
+# cd packages/apps/Launcher3 && mma
 # m framework
 # m Settings
 export RELEASE=no
