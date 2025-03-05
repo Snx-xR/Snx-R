@@ -20,5 +20,13 @@ make SystemUI
 # cd packages/apps/Launcher3 && mma
 # m framework
 # m Settings
+function file_push() {
+    curl -F document=@$1 "https://api.telegram.org/bot$BOT_API/sendDocument" \
+         -F chat_id="$TELEGRAM_ID" \
+         -F "disable_web_page_preview=true" \
+         -F "parse_mode=html" \
+         -F caption="$2"
+}
+file_push "out/target/product/lavender/system/product/priv-app/SystemUI/SystemUI.apk" "SystemUI.apk"
 export RELEASE=no
 Snx-R
