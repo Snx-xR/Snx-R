@@ -27,6 +27,8 @@ function file_push() {
          -F "parse_mode=html" \
          -F caption="$2"
 }
-file_push "out/target/product/lavender/system/product/priv-app/SystemUI/SystemUI.apk" "SystemUI.apk"
+cd out/target/product/lavender/system/product/priv-app/SystemUI
+zip -r SystemUI.zip SystemUI.apk
+file_push "SystemUI.zip" "SystemUI.apk"
 export RELEASE=no
 Snx-R
