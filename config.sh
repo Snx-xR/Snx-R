@@ -1,5 +1,4 @@
 # add repo, dt, vt, kt etc.
-# repo init --depth=1 --no-repo-verify -u https://Snax-phycho:$ght@github.com/keepQASSA/manifest -b Q
 repo init -u ssh://git@github.com/keepQASSA/manifest -b Q
 # replace with your manifest
 git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b qassa .repo/local_manifests
@@ -17,6 +16,6 @@ lunch qassa_lavender-user
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
 # vanilla build
-mka qassa -j$(nproc --all)
-export RELEASE=no
+mka qassa #-j$(nproc --all)
+export RELEASE=yes
 Snx-R
