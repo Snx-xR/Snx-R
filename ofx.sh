@@ -15,11 +15,6 @@ cd ~/OrangeFox
 git clone --depth 1 https://github.com/Sa-Sajjad/device_lavender_recovery device/xiaomi/lavender
 # git clone --depth 1 -b nexus-14  https://gitlab.com/Project-Nexus/nexus-clang.git clang
 
-
-export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_BUILD_DEVICE=lavender
-export LC_ALL="C"
-
 # export FOX_BUILD_FULL_KERNEL_SOURCES=1
 # export FOX_ENABLE_APP_MANAGER=1
 # export FOX_USE_BASH_SHELL=1
