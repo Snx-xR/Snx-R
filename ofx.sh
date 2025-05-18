@@ -6,7 +6,7 @@ cd ~/OrangeFox_sync/sync/
 ./orangefox_sync.sh --branch 12.1 --path ~/OrangeFox
 cd ~/OrangeFox
 # git clone --depth 1 https://github.com/Sa-Sajjad/kernel_xiaomi_lavender-4.19 kernel/xiaomi/lavender
-git clone --depth 1 https://github.com/Sa-Sajjad/device_lavender_recovery device/xiaomi/lavender
+git clone --depth 1 https://github.com/Sa-Sajjad/device_lavender_recovery -b fbe device/xiaomi/lavender
 # git clone --depth 1 -b nexus-14  https://gitlab.com/Project-Nexus/nexus-clang.git clang
 
 export ALLOW_MISSING_DEPENDENCIES=true
