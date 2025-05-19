@@ -17,6 +17,6 @@ lunch qassa_lavender-user
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
 # vanilla build
-mka qassa -j$(nproc --all)
-export RELEASE=no
+mka qassa
+export RELEASE=yes
 Snx-R
