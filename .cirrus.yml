@@ -19,5 +19,8 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  twrp_script:
+  ofx_script:
     - bash $CIRRUS_WORKING_DIR/ofx.sh
+
+  twrp_script:
+    - bash $CIRRUS_WORKING_DIR/ofx2.sh

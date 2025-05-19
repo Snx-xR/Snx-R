@@ -15,5 +15,4 @@ export LC_ALL="C"
 
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka adbd recoveryimage
-rsync -vhcP -e ssh out/target/product/$device/OrangeFox*.img sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/recovery/
-rsync -vhcP -e ssh out/target/product/$device/OrangeFox*.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/$device/recovery/
+bash $CIRRUS_WORKING_DIR/gh.sh
