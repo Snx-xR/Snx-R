@@ -22,5 +22,5 @@ task:
   ofx_script:
     - bash $CIRRUS_WORKING_DIR/ofx.sh
 
-  twrp_script:
-    - bash $CIRRUS_WORKING_DIR/ofx2.sh
+  # twrp_script:
+    # - bash $CIRRUS_WORKING_DIR/ofx2.sh
