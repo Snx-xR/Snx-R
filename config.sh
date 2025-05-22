@@ -8,6 +8,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --prune
 source build/envsetup.sh
 export TZ=Asia/Dhaka
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch lineage_lavender-userdebug || echo "no problem"
+# lunch lineage_lavender-userdebug || echo "no problem"
 brunch lavender
 Snx-R
