@@ -23,10 +23,14 @@ task:
           
   update_script:
     - sudo apt update -y
-    - sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev git-lfs -y
+    - sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 jq libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev git-lfs -y
 
-  compiling_script:
-    - sudo apt install jq curl -y
+  sync_script:
     - mkdir Cr && cd Cr
-    - git clone https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/Snx -b cirrus
-    - bash Snx/build.sh --sync -sf -gf
+    - repo init -u https://github.com/crDroid-Revived/android.git -b 11.0 --git-lfs
+    - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr .repo/local_manifests
+    - git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b cr .repo/local_manifests
+    - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --prune
+
+  compile_script:
+    - source build/envsetup.sh; export TZ=Asia/Dhaka; export SELINUX_IGNORE_NEVERALLOWS=true; brunch lavender
