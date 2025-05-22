@@ -32,5 +32,5 @@ task:
     - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --prune
 
   compile_script:
-    - mkdir Cr && cd Cr
-    - source build/envsetup.sh; export TZ=Asia/Dhaka; export SELINUX_IGNORE_NEVERALLOWS=true; brunch lavender
+    - bash $CIRRUS_WORKING_DIR/cr.sh
+    
