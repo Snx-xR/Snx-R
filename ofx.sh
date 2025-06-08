@@ -8,11 +8,10 @@ cd ~/OrangeFox
 # git clone --depth 1 https://github.com/Sa-Sajjad/kernel_xiaomi_lavender-4.19 kernel/xiaomi/lavender
 git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 device/xiaomi/lavender
 
-# export ALLOW_MISSING_DEPENDENCIES=true
-# export FOX_BUILD_DEVICE=lavender
-# export LC_ALL="C"
+export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_BUILD_DEVICE=lavender
+export LC_ALL="C"
 
 source build/envsetup.sh
-export FOX_BUILD_DEVICE=lavender
 lunch twrp_lavender-eng && mka adbd recoveryimage
 bash $CIRRUS_WORKING_DIR/gh.sh
