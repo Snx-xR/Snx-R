@@ -10,7 +10,7 @@ git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 
 
 # export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_BUILD_DEVICE=lavender
-export LC_ALL="C"
+# export LC_ALL="C"
 
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka adbd recoveryimage
