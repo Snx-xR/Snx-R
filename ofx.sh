@@ -13,7 +13,6 @@ git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 
 # export LC_ALL="C"
 
 source build/envsetup.sh
-source $CIRRUS_WORKING_DIR/env.sh
-export OF_ENABLE_ALL_PARTITION_TOOLS=1
+# source $CIRRUS_WORKING_DIR/env.sh
 lunch twrp_lavender-eng && mka adbd recoveryimage
 bash $CIRRUS_WORKING_DIR/gh.sh
