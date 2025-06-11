@@ -9,7 +9,7 @@ cd ~/OrangeFox
 git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 device/xiaomi/lavender
 
 # export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_BUILD_DEVICE=lavender
+# export FOX_BUILD_DEVICE=lavender
 # export LC_ALL="C"
 
 source build/envsetup.sh
