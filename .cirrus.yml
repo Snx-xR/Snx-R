@@ -2,7 +2,7 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
-    TELEGRAM_ID: $tg_id
+    TELEGRAM_ID: 6980253845
     BOT_API: $bot_api
 
 task:
@@ -25,4 +25,4 @@ task:
     - sudo apt install jq curl -y
     - mkdir Nusantara && cd Nusantara
     - git clone https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/Snx -b cirrus
-    - bash Snx/build.sh --sync -sf -gf
+    - bash Snx/build.sh --sync -gf
