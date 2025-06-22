@@ -63,7 +63,7 @@ if ! gh auth login --with-token < token.txt; then
 fi
 
 # Define GitHub repository
-GH="https://github.com/Sa-Sajjad/device_lavender_recovery"
+GH="https://github.com/Sa-Sajjad/Action-OFRP-Builder"
 
 # Create a unique release tag
 FP=$(ls out/target/product/$device/*.img | head -n 1) # Use ls to expand the glob pattern and pick the first match
@@ -73,7 +73,7 @@ if [ -z "$FP" ]; then
     exit 1
 fi
 
-FZ=$(basename "$FP" | awk -F- '{print $1}')-$(date '+%Y%m%d-%H%M')
+FZ=$(basename "$FP" | awk -F- '{print $1}')-FBE_V2-$(date '+%Y%m%d')
 echo -e "$FZ"
 echo -e "Start uploading file on github..."
 

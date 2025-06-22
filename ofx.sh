@@ -6,13 +6,7 @@ cd ~/OrangeFox_sync/sync/
 ./orangefox_sync.sh --branch 12.1 --path ~/OrangeFox
 cd ~/OrangeFox
 # git clone --depth 1 https://github.com/Sa-Sajjad/kernel_xiaomi_lavender-4.19 kernel/xiaomi/lavender
-git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b ofx_12.1 device/xiaomi/lavender
-
-# export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_BUILD_DEVICE=lavender
-export FOX_LAVENDER_KERNEL=4.19
-export FOX_USE_DYNAMIC_PARTITIONS=1
-# export LC_ALL="C"
+git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 device/xiaomi/lavender
 
 source build/envsetup.sh
 lunch twrp_lavender-eng && mka adbd recoveryimage
