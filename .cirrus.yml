@@ -24,5 +24,7 @@ task:
   compiling_script:
     - sudo apt install jq curl -y
     - mkdir Nusantara && cd Nusantara
-    - git clone https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/Snx -b cirrus
-    - bash Snx/build.sh --sync -sf -gf
+    - echo "https://Sa-Sajjad:$ght@github.com" > ~/.git-credentials; git config --global credential.helper "store --file ~/.git-credentials"
+    - repo init --depth=1 --no-repo-verify -u https://Snax-phycho:$ght@github.com/Nusantara-SiXtY-N9/android_manifest_nusa.git -b 10
+    - git clone https://github.com/Sa-Sajjad/manifest.git --depth 1 -b ten-ksu .repo/local_manifests
+    - repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
