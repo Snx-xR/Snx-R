@@ -9,5 +9,6 @@ cd ~/OrangeFox
 git clone --depth 1 git@github.com:Sa-Sajjad/device_lavender_recovery.git -b 15 device/xiaomi/lavender
 
 source build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_lavender-eng && mka adbd recoveryimage
 bash $CIRRUS_WORKING_DIR/gh.sh
