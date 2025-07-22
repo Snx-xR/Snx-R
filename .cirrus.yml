@@ -2,7 +2,7 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     rom_name: Nusantara
     device: lavender
-    TELEGRAM_ID: 6980253845
+    TELEGRAM_ID: $tg_id
     BOT_API: $bot_api
 
 task:
