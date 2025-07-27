@@ -24,4 +24,4 @@ task:
   compiling_script:
     - sudo apt install jq curl -y
     - mkdir Nusantara && cd Nusantara
-    - curl https://gist.githubusercontent.com/Sa-Sajjad/0812de70e201b510839837eea024d95d/raw/x.sh | sh
+    - curl https://gist.githubusercontent.com/Sa-Sajjad/0812de70e201b510839837eea024d95d/raw/x.sh | bash
