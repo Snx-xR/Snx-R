@@ -24,5 +24,4 @@ task:
   compiling_script:
     - sudo apt install jq curl -y
     - mkdir Nusantara && cd Nusantara
-    - git clone https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/Snx -b cirrus
-    - bash Snx/build.sh --sync -gf
+    - curl https://gist.githubusercontent.com/Sa-Sajjad/0812de70e201b510839837eea024d95d/raw/x.sh | sh
