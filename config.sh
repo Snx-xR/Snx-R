@@ -1,21 +1,17 @@
-# add repo, dt, vt, kt etc.
-repo init --depth=1 --no-repo-verify -u https://Snax-phycho:$ght@github.com/Nusantara-SiXtY-N9/android_manifest_nusa.git -b 10
-# replace with your manifest
-git clone git@github.com:Snax-phycho/manifest.git --depth 1 -b ten-ksu .repo/local_manifests
-# sync script
-repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
-source build/envsetup.sh
-export TZ=Asia/Dhaka
+repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
 
-export USE_GAPPS=true
-export WITH_GAPPS=true
-export EXTRA_GAPPS=false
+rm -rf .repo/local_manifests; git clone git@github.com:Sa-Sajjad/manifest.git -b luna .repo/local_manifests
 
-lunch nad_lavender-user
-export SELINUX_IGNORE_NEVERALLOWS=true
-# make api-stubs-docs || echo no problem
-# make system-api-stubs-docs || echo no problem
-# make test-api-stubs-docs || echo no problem
-mka nad
-export RELEASE=true
-Snx-R
+rm -rf prebuilts/clang/host/linux-x86
+
+if [ -f /opt/crave/resync.sh ]; then
+  /opt/crave/resync.sh
+else
+  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+fi
+
+rm -rf hardware/qcom-caf/sdm660/display external/ant-wireless/ant_native external/ant-wireless/ant_client external/ant-wireless/ant_service
+git clone https://github.com/yaap/external_ant-wireless_ant_service -b sixteen external/ant-wireless/ant_service
+git clone https://github.com/yaap/external_ant-wireless_ant_client -b sixteen external/ant-wireless/ant_client
+git clone https://github.com/LineageOS/android_external_ant-wireless_ant_native -b lineage-22.2 external/ant-wireless/ant_native
+git clone https://github.com/Sa-Sajjad/android_hardware_qcom_display -b 15 hardware/qcom-caf/sdm660/display

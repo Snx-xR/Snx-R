@@ -21,7 +21,9 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
+  syning_script:
+    - mkdir Lunaris && cd Lunaris
+    - bash $CIRRUS_WORKING_DIR/config.sh
+
   compiling_script:
-    - sudo apt install jq curl -y
-    - mkdir Nusantara && cd Nusantara
-    - curl https://gist.githubusercontent.com/Sa-Sajjad/0812de70e201b510839837eea024d95d/raw/x.sh | bash
+    - source build/envsetup.sh; lunch lineage_lavender-bp2a-user; make installclean; m lunaris
