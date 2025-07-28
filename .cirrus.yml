@@ -26,4 +26,5 @@ task:
     - bash $CIRRUS_WORKING_DIR/config.sh
 
   compiling_script:
+    - cd Lunaris
     - source build/envsetup.sh; lunch lineage_lavender-bp2a-user; make installclean; m lunaris
