@@ -15,3 +15,7 @@ git clone https://github.com/yaap/external_ant-wireless_ant_service -b sixteen e
 git clone https://github.com/yaap/external_ant-wireless_ant_client -b sixteen external/ant-wireless/ant_client
 git clone https://github.com/LineageOS/android_external_ant-wireless_ant_native -b lineage-22.2 external/ant-wireless/ant_native
 git clone https://github.com/Sa-Sajjad/android_hardware_qcom_display -b 15 hardware/qcom-caf/sdm660/display
+
+source build/envsetup.sh
+lunch lineage_lavender-bp2a-user
+m lunaris
