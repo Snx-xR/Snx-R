@@ -17,5 +17,5 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem
 mka nad
-export RELEASE=true
+export RELEASE=no
 Snx-R
