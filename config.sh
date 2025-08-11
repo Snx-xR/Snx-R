@@ -7,12 +7,9 @@ repo sync -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune
 source build/envsetup.sh
 export TZ=Asia/Dhaka
 
-export USE_GAPPS=true
-export WITH_GAPPS=true
-export EXTRA_GAPPS=false
-
 lunch nad_lavender-user
-export SELINUX_IGNORE_NEVERALLOWS=true
+make installclean
+# export SELINUX_IGNORE_NEVERALLOWS=true
 # make api-stubs-docs || echo no problem
 # make system-api-stubs-docs || echo no problem
 # make test-api-stubs-docs || echo no problem

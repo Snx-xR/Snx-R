@@ -21,8 +21,12 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
           
-  compiling_script:
+  vanilla_script:
     - sudo apt install jq curl -y
     - mkdir Nusantara && cd Nusantara
     - git clone https://Sa-Sajjad:$ght@github.com/Sa-Sajjad/Snx -b cirrus
     - bash Snx/build.sh --sync -gf
+
+  gapps_script:
+    - mkdir Nusantara && cd Nusantara
+    - export USE_GAPPS=true && bash Snx/build.sh -gf
